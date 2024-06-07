@@ -1,30 +1,31 @@
-
 {{ 'hero-section.css' | asset_url | stylesheet_tag }}
 
 <section class="banner-container">
-    {% if section.settings.hero_image %}
-        {{ section.settings.hero_image |  image_url: width:  1080 |  image_tag: class: 'banner__media'  }}
-    {% endif %}
-    <div class="banner__content">
-        {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'heading' -%}
-                <h2
-                  class="banner__heading"
-                >
-                  {{ block.settings.heading }}
-                </h2>
-              {%- when 'text' -%}
-                <div class="banner__text rte " >
-                  <p>{{ block.settings.text }}</p>
-                </div>
-              {%- when 'button' -%}
-                <a class="banner__button">
-                    {{ block.settings.button }}
-                </a>
-            {%- endcase -%}
-          {%- endfor -%}
+  {% if section.settings.hero_image %}
+    {{ section.settings.hero_image | image_url: width: 1080 | image_tag: class: 'banner__media' }}
+  {% endif %}
+  <div class="banner__content {{ section.settings.content_position }}">
+    <div class="banner__box--in {{ section.settings.desktop_content_alignment }}">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2
+              class="banner__heading"
+            >
+              {{ block.settings.heading }}
+            </h2>
+          {%- when 'text' -%}
+            <div class="banner__text rte ">
+              <p>{{ block.settings.text }}</p>
+            </div>
+          {%- when 'button' -%}
+            <a class="banner__button">
+              {{ block.settings.button }}
+            </a>
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
+  </div>
 </section>
 
 {% schema %}
@@ -35,32 +36,84 @@
       "type": "image_picker",
       "id": "hero_image",
       "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "options": [
+        {
+          "value": "middle-left",
+          "label": "Middle Left"
+        },
+        {
+          "value": "middle-center",
+          "label": "Middle Center"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "middle-center",
+      "label": "Desktop Content Position"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Content Alignment"
     }
   ],
   "blocks": [
     {
-        "name": "heading",
-        "type": "heading",
-        "settings": [
-            {
-                "type": "inline_richtext",
-                "id": "heading",
-                "label": "Hero Title",
-                "default": "Made in Nashville"
-            }
-        ]
+      "name": "heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Hero Title",
+          "default": "Made in Nashville"
+        }
+      ]
     },
     {
-        "type": "text",
-        "name": "text",
-        "settings": [
-            {
-                "type": "inline_richtext",
-                "id": "text",
-                "label": "Hero Description",
-                "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            }
-        ]
+      "type": "text",
+      "name": "text",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Hero Description",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
     }
   ],
   "presets": [

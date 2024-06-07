@@ -1,11 +1,51 @@
 .banner-container {
-    min-height: 62dvh;
+    height: 62dvh;
     position: relative;
 }
 
 .banner__media {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.banner__content {
+    display: flex;
+    padding: 3rem;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.banner__content.middle-center {
+    justify-content: center;
+    align-items: center;
+}
+.banner__content.middle-center {
+    justify-content: flex-start;
+    align-items: center;
+}
+.banner__content.middle-right {
+    justify-content: flex-end;
+    align-items: center;
+}
+.banner__content.bottom-left {
+    align-items: end;
+    justify-content: flex-start;
+}
+.banner__content.bottom-center {
+    align-items: end;
+    justify-content: center;
+}
+.banner__content.bottom-right {
+    align-items: end;
+    justify-content: flex-end;
+}
+
+
+.banner__box--in {
+    padding: 1rem 0;
 }
