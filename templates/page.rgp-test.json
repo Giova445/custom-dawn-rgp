@@ -49,12 +49,43 @@
       "settings": {
         "hero_image": "shopify:\/\/shop_images\/DALL_E_2024-06-06_21.12.30_-_A_close-up_photo_of_a_cheerful_golden_retriever_dog_with_its_tongue_out_looking_to_the_right._The_dog_is_positioned_on_the_left_side_of_the_frame_wi.webp",
         "content_position": "bottom-center",
-        "desktop_content_alignment": "right"
+        "desktop_content_alignment": "right",
+        "content_position_mobile": "middle-mobile",
+        "mobile_content_alignment": "center-mobile"
+      }
+    },
+    "featured_collection_3MWLi3": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "automated-collection",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "rgp_hero_Fgyrpt"
+    "rgp_hero_Fgyrpt",
+    "featured_collection_3MWLi3"
   ]
 }

@@ -218,31 +218,13 @@ slider-component.slider-component-full-width {
 
 /* Scrollbar */
 
-.slider {
-  scrollbar-color: rgb(var(--color-foreground)) rgba(var(--color-foreground), 0.04);
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 
 .slider::-webkit-scrollbar {
-  height: 0.4rem;
-  width: 0.4rem;
   display: none;
 }
 
-.slider::-webkit-scrollbar-thumb {
-  background-color: rgb(var(--color-foreground));
-  border-radius: 0.4rem;
-  border: 0;
-}
-
-.slider::-webkit-scrollbar-track {
-  background: rgba(var(--color-foreground), 0.04);
-  border-radius: 0.4rem;
-}
-
 .slider-counter {
-  display: flex;
+  display: none;
   justify-content: center;
   min-width: 4.4rem;
 }
@@ -256,11 +238,32 @@ slider-component.slider-component-full-width {
 .slider-counter__link {
   padding: 1rem;
 }
+.slider-buttons {
+  position: absolute;
+  right: 1rem;
+  top: -57px;
+}
 
 @media screen and (max-width: 749px) {
   .slider-counter__link {
     padding: 0.7rem;
   }
+  .slider::-webkit-scrollbar {
+    height: 5px;
+    display: block;
+  }
+
+  .slider::-webkit-scrollbar-track {
+    background: #4A4E5833;
+    margin: 0 2rem;
+  }
+
+  .slider::-webkit-scrollbar-thumb {
+    background: #4A4E58;
+    width: 12px;
+  }
+
+  
 }
 
 .slider-counter__link--dots .dot {
@@ -315,6 +318,7 @@ slider-component.slider-component-full-width {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -345,15 +349,17 @@ slider-component.slider-component-full-width {
   display: flex;
   align-items: center;
   justify-content: center;
+  rotate: 90deg;
+}
+.slider-button .icon-arrow {
+  width: 2.75rem;
+  height: 2rem;
 }
 
 .slider-button:not([disabled]):hover {
   color: rgb(var(--color-foreground));
 }
 
-.slider-button .icon {
-  height: 0.6rem;
-}
 
 .slider-button[disabled] .icon {
   color: rgba(var(--color-foreground), 0.3);
