@@ -22,14 +22,34 @@
           "settings": {
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           }
+        },
+        "button_J46C6E": {
+          "type": "button",
+          "settings": {
+            "button_link": "shopify:\/\/products\/gift-card",
+            "button_text": "Shop All Kennels",
+            "button_state": "primary"
+          }
+        },
+        "button_n9UqqB": {
+          "type": "button",
+          "settings": {
+            "button_link": "",
+            "button_text": "Shop All Kennels",
+            "button_state": "secondary"
+          }
         }
       },
       "block_order": [
         "heading_zpwnRN",
-        "text_frfUT8"
+        "text_frfUT8",
+        "button_J46C6E",
+        "button_n9UqqB"
       ],
       "settings": {
-        "hero_image": "shopify:\/\/shop_images\/DALL_E_2024-06-06_21.12.30_-_A_close-up_photo_of_a_cheerful_golden_retriever_dog_with_its_tongue_out_looking_to_the_right._The_dog_is_positioned_on_the_left_side_of_the_frame_wi.webp"
+        "hero_image": "shopify:\/\/shop_images\/DALL_E_2024-06-06_21.12.30_-_A_close-up_photo_of_a_cheerful_golden_retriever_dog_with_its_tongue_out_looking_to_the_right._The_dog_is_positioned_on_the_left_side_of_the_frame_wi.webp",
+        "content_position": "bottom-center",
+        "desktop_content_alignment": "right"
       }
     }
   },

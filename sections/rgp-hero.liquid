@@ -1,11 +1,11 @@
 {{ 'hero-section.css' | asset_url | stylesheet_tag }}
 
-<section class="banner-container">
+<section class="banner-container {{ section.settings.content_position_mobile }}">
   {% if section.settings.hero_image %}
     {{ section.settings.hero_image | image_url: width: 1080 | image_tag: class: 'banner__media' }}
   {% endif %}
-  <div class="banner__content {{ section.settings.content_position }}">
-    <div class="banner__box--in {{ section.settings.desktop_content_alignment }}">
+  <div class="banner__content {{ section.settings.content_position }} {{ section.settings.content_position_mobile }}">
+    <div class="banner__box--in {{ section.settings.desktop_content_alignment }} {{ section.settings.mobile_content_alignment }}">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
@@ -18,9 +18,10 @@
             <div class="banner__text rte ">
               <p>{{ block.settings.text }}</p>
             </div>
+          
           {%- when 'button' -%}
-            <a class="banner__button">
-              {{ block.settings.button }}
+            <a href="{{ block.settings.button_link }}" class="banner__button {{ block.settings.button_state }}">
+              {{ block.settings.button_text }}
             </a>
         {%- endcase -%}
       {%- endfor -%}
@@ -88,6 +89,42 @@
       ],
       "default": "center",
       "label": "Content Alignment"
+    },
+    {
+      "type": "select",
+      "id": "content_position_mobile",
+      "options": [
+        {
+          "value": "middle-mobile",
+          "label": "Middle text on image Left"
+        },
+        {
+          "value": "middle-bottom-mobile",
+          "label": "Middle text on image Bottom"
+        },
+        {
+          "value": "bottom-mobile",
+          "label": "Content below image"
+        }
+      ],
+      "default": "middle-mobile",
+      "label": "Mobile Content Position"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left-mobile",
+          "label": "Left"
+        },
+        {
+          "value": "center-mobile",
+          "label": "Center"
+        }
+      ],
+      "default": "center-mobile",
+      "label": "Mobile Content Alignment"
     }
   ],
   "blocks": [
@@ -114,6 +151,40 @@
           "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
       ]
+    },
+    {
+        "type": "button",
+        "name": "button",
+        "settings": [
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "button URL",
+                "info": "add URL"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button text",
+                "default": "Shop All Kennels"
+            },
+            {
+                "type": "select",
+                "id": "button_state",
+                "options": [
+                    {
+                    "value": "primary",
+                    "label": "primary"
+                    },
+                    {
+                    "value": "secondary",
+                    "label": "secondary"
+                    }
+                ],
+                "default": "primary",
+                "label": "Button state"
+            }
+        ]
     }
   ],
   "presets": [
