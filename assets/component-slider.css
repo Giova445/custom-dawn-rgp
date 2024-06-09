@@ -92,6 +92,8 @@ slider-component.slider-component-full-width {
     scroll-padding-left: 1.5rem;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
   }
 
   /* Fix to show some space at the end of our sliders in all browsers */
@@ -142,6 +144,8 @@ slider-component.slider-component-full-width {
     flex-wrap: inherit;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    gap: 3rem;
+    padding: 0 1rem;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
@@ -187,6 +191,7 @@ slider-component.slider-component-full-width {
 
   .slider--desktop.grid--4-col-desktop .grid__item {
     width: calc((100% - var(--desktop-margin-left-first-item)) / 4 - var(--grid-desktop-horizontal-spacing) * 3);
+    min-width: 40rem;
   }
 
   .slider--desktop.grid--3-col-desktop .grid__item {

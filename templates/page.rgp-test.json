@@ -57,10 +57,10 @@
     "featured_collection_3MWLi3": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured collection",
+        "title": "Shop by category statement here.",
         "heading_size": "h2",
         "description": "",
-        "show_link": "<p>SHOP NOW<\/p>",
+        "show_link": "<p>Shop Now<\/p>",
         "show_description": false,
         "description_style": "subtitle",
         "collection": "automated-collection",
