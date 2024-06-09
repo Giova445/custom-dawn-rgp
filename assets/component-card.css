@@ -128,6 +128,8 @@
   padding: 1rem;
   width: 100%;
   flex-grow: 1;
+  position: absolute;
+  bottom: 0;
 }
 
 .card__content--auto-margins {
@@ -190,6 +192,18 @@
   text-align: left;
 }
 
+.underline-links-hover a {
+  font-size: 3.2rem;
+  color: #fff;
+} 
+
+.card-information > .shop--now {
+  color: #fff;
+  font-size: 2.4rem;
+  text-decoration: underline;
+  margin: .5rem 0 0 0;
+}
+
 @media screen and (min-width: 990px) {
   .grid--6-col-desktop .card__content quick-add-bulk .quantity {
     width: auto;
@@ -246,6 +260,14 @@
 
   .grid--2-col-tablet-down .card__content quick-add-bulk .quantity {
     width: auto;
+  }
+  
+  .underline-links-hover a {
+    font-size: 2.3rem;
+  } 
+
+  .card-information > .shop--now {
+    font-size: 1.6rem;
   }
 }
 
@@ -401,10 +423,6 @@
     transform: scale(1.03);
   }
 
-  .underline-links-hover:hover a {
-    text-decoration: underline;
-    text-underline-offset: 0.3rem;
-  }
 }
 
 .card--standard.card--media .card__inner .card__information,
@@ -423,10 +441,6 @@
   padding: 0;
 }
 
-.card--standard > .card__content .card__information {
-  padding-left: 0;
-  padding-right: 0;
-}
 
 .card--card.card--media .card__inner .card__information,
 .card--card.card--text .card__inner,

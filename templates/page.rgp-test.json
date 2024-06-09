@@ -47,7 +47,7 @@
         "button_n9UqqB"
       ],
       "settings": {
-        "hero_image": "shopify:\/\/shop_images\/DALL_E_2024-06-06_21.12.30_-_A_close-up_photo_of_a_cheerful_golden_retriever_dog_with_its_tongue_out_looking_to_the_right._The_dog_is_positioned_on_the_left_side_of_the_frame_wi.webp",
+        "hero_image": "shopify:\/\/shop_images\/8a64284f26cd200e7c2eafade3abe05f.jpg",
         "content_position": "bottom-center",
         "desktop_content_alignment": "right",
         "content_position_mobile": "middle-mobile",
@@ -60,12 +60,13 @@
         "title": "Featured collection",
         "heading_size": "h2",
         "description": "",
+        "show_link": "<p>SHOP NOW<\/p>",
         "show_description": false,
         "description_style": "subtitle",
         "collection": "automated-collection",
         "products_to_show": 25,
         "columns_desktop": 4,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
@@ -76,7 +77,7 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
