@@ -61,6 +61,8 @@
         "heading_size": "h2",
         "description": "",
         "show_link": "<p>Shop Now<\/p>",
+        "overlay": "#000000",
+        "overlay_opacity": 31,
         "show_description": false,
         "description_style": "subtitle",
         "collection": "automated-collection",

@@ -29,6 +29,17 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+  .card__media::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: {{ section.settings.overlay }};
+    opacity: {{ section.settings.overlay_opacity }}%;
+    pointer-events: none;
+  }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
@@ -234,6 +245,21 @@
       "type": "richtext",
       "id": "show_link",
       "label": "Shop Now label"
+    },
+    {
+      "type": "color",
+      "id": "overlay",
+      "label": "Overlay Card Tiles"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay Opacity",
+      "min": 0,
+      "max": 100,
+      "default": 30,
+      "step": 1,
+      "unit": "%"
     },
     {
       "type": "checkbox",
