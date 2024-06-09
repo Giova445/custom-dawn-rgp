@@ -29,6 +29,15 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+
+  #collection-{{ section.id }}{
+    background: {{ section.settings.color_scheme }};
+  }
+
+  .collection__title--desktop-slider .title {
+    color: {{ section.settings.heading_color }}
+  }
+
   .card__media::after {
     content: "";
     position: absolute;
@@ -39,6 +48,14 @@
     background-color: {{ section.settings.overlay }};
     opacity: {{ section.settings.overlay_opacity }}%;
     pointer-events: none;
+  }
+
+  #collection-{{ section.id }} .underline-links-hover a,
+  #collection-{{ section.id }} .card-information > .shop--now {
+    color: {{ section.settings.text-color }};
+  }
+  #collection-{{ section.id }} .badge {
+    color: {{ section.settings.badge-color }}
   }
 
   @media screen and (min-width: 750px) {
@@ -70,7 +87,7 @@
 -%}
 
 <div
-  class="color-{{ section.settings.color_scheme }} isolate gradient"
+  class="isolate gradient"
 >
   <div
     class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
@@ -82,18 +99,6 @@
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ section.settings.title }}
         </h2>
-      {%- endif -%}
-      {%- if section.settings.description != blank
-        or section.settings.show_description
-        and section.settings.collection.description != empty
-      -%}
-        <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {%- if section.settings.show_description -%}
-            {{ section.settings.collection.description }}
-          {%- else -%}
-            {{ section.settings.description -}}
-          {%- endif %}
-        </div>
       {%- endif -%}
     </div>
 
@@ -217,6 +222,16 @@
       "label": "t:sections.featured-collection.settings.title.label"
     },
     {
+      "type": "color",
+      "id": "color_scheme",
+      "label": "Background section color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
       "type": "select",
       "id": "heading_size",
       "options": [
@@ -238,11 +253,6 @@
     },
     {
       "type": "richtext",
-      "id": "description",
-      "label": "t:sections.featured-collection.settings.description.label"
-    },
-    {
-      "type": "richtext",
       "id": "show_link",
       "label": "Shop Now label"
     },
@@ -250,6 +260,16 @@
       "type": "color",
       "id": "overlay",
       "label": "Overlay Card Tiles"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Text Badge Color"
+    },
+    {
+      "type": "color",
+      "id": "badge-color",
+      "label": "Text Badge Color"
     },
     {
       "type": "range",
@@ -262,32 +282,6 @@
       "unit": "%"
     },
     {
-      "type": "checkbox",
-      "id": "show_description",
-      "label": "t:sections.featured-collection.settings.show_description.label",
-      "default": false
-    },
-    {
-      "type": "select",
-      "id": "description_style",
-      "label": "t:sections.featured-collection.settings.description_style.label",
-      "options": [
-        {
-          "value": "body",
-          "label": "t:sections.featured-collection.settings.description_style.options__1.label"
-        },
-        {
-          "value": "subtitle",
-          "label": "t:sections.featured-collection.settings.description_style.options__2.label"
-        },
-        {
-          "value": "uppercase",
-          "label": "t:sections.featured-collection.settings.description_style.options__3.label"
-        }
-      ],
-      "default": "body"
-    },
-    {
       "type": "collection",
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
@@ -296,7 +290,7 @@
       "type": "range",
       "id": "products_to_show",
       "min": 2,
-      "max": 25,
+      "max": 10,
       "step": 1,
       "default": 4,
       "label": "t:sections.featured-collection.settings.products_to_show.label"
@@ -347,13 +341,6 @@
       "id": "enable_desktop_slider",
       "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
       "default": false
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info",
-      "default": "scheme-1"
     },
     {
       "type": "header",
