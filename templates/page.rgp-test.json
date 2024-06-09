@@ -48,8 +48,8 @@
       ],
       "settings": {
         "hero_image": "shopify:\/\/shop_images\/8a64284f26cd200e7c2eafade3abe05f.jpg",
-        "content_position": "bottom-center",
-        "desktop_content_alignment": "right",
+        "content_position": "bottom-left",
+        "desktop_content_alignment": "left",
         "content_position_mobile": "middle-mobile",
         "mobile_content_alignment": "center-mobile"
       }
