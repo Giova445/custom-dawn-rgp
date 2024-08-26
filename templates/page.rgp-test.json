@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -48,9 +57,9 @@
       ],
       "settings": {
         "hero_image": "shopify:\/\/shop_images\/8a64284f26cd200e7c2eafade3abe05f.jpg",
-        "content_position": "bottom-left",
+        "content_position": "bottom-right",
         "desktop_content_alignment": "left",
-        "content_position_mobile": "middle-mobile",
+        "content_position_mobile": "middle-bottom-mobile",
         "mobile_content_alignment": "center-mobile"
       }
     },
